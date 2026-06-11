@@ -5,7 +5,6 @@
       <p class="status-alert">STATUS: OPERACIONAL (MÍDIAS LOCAIS)</p>
     </header>
 
-
     <section class="control-panel">
       <input 
         v-model="searchQuery" 
@@ -14,7 +13,6 @@
         class="search-input"
       />
       
-
       <div class="filter-buttons">
         <button @click="filterType = 'todos'" :class="{ active: filterType === 'todos' }">TODOS</button>
         <button @click="filterType = 'eva'" :class="{ active: filterType === 'eva' }">EVANGELIONS</button>
@@ -22,16 +20,13 @@
       </div>
     </section>
 
-
     <section class="database-grid">
       <div v-for="item in filteredItems" :key="item.id" class="card-item" :class="item.type">
         <div class="card-badge">{{ item.type.toUpperCase() }}</div>
         
-
         <div class="card-image-container">
           <img :src="getImageUrl(item.imageName)" :alt="item.name" class="card-image" />
         </div>
-
 
         <h3>{{ item.name }}</h3>
         <p><strong>Designação:</strong> {{ item.designation }}</p>
@@ -40,7 +35,6 @@
     </section>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -70,7 +64,7 @@ export default {
           id: 3, 
           type: 'eva', 
           name: 'EVA-02', 
-          designation: 'Unidade de Produção', 
+          designation: 'Unidade de Production', 
           description: 'Construído na Alemanha, pilotado por Asuka Langley Soryu.',
           imageName: 'eva02.webp'
         },
@@ -140,4 +134,36 @@ export default {
 .card-item.anjo { color: #ff3333; border-color: #ff3333; }
 .card-item.anjo .card-image-container { border-color: #ff3333; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+/* 📱 REGRAS DE RESPONSIVIDADE ADICIONADAS */
+@media (max-width: 768px) {
+  .system-header h1 {
+    font-size: 20px;
+    padding: 0 10px;
+  }
+  
+  .control-panel {
+    padding: 15px;
+  }
+
+  .filter-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .filter-buttons button {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .database-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .card-image-container {
+    height: 200px;
+  }
+}
 </style>
