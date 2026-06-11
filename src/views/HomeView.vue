@@ -1,9 +1,7 @@
 <template>
   <div class="home-wrapper">
-    <!-- Componente de animação: avisa ao pai quando termina -->
     <NervSplash v-if="isLoading" @splash-finished="onSplashFinished" />
 
-    <!-- Conteúdo principal -->
     <div v-else class="home-container">
       <header class="system-header">
         <h1>SISTEMA TÁTICO MAGI // INICIALIZADO</h1>
@@ -57,10 +55,10 @@ export default {
       filterType: 'todos',
       database: [
         { id: 1, type: 'eva', name: 'EVA-01', designation: 'Protótipo de Testes', description: 'Unidade pilotada por Shinji Ikari.', imageName: 'Eva01.webp' },
-        { id: 2, type: 'eva', name: 'EVA-00', designation: 'Protótipo Inicial', description: 'Primeira unidade funcional.', imageName: 'Eva00_old_and_new.png' },
+        { id: 2, type: 'eva', name: 'EVA-00', designation: 'Protótipo Inicial', description: 'Primeira unidade funcional.', imageName: 'Eva00_both_versions(2).png' },
         { id: 3, type: 'eva', name: 'EVA-02', designation: 'Unidade de Produção', description: 'Construído na Alemanha.', imageName: 'eva02.webp' },
         { id: 4, type: 'anjo', name: 'Sachiel', designation: '3º Anjo', description: 'Primeiro Anjo a atacar Neo Tokyo-3.', imageName: 'sachiel.webp' },
-        { id: 5, type: 'anjo', name: 'Ramiel', designation: '5º Anjo', description: 'Fortaleza voadora octaédrica.', imageName: 'ramiel.webp' },
+        { id: 5, type: 'anjo', name: 'Ramiel', designation: '5º Anjo', description: 'Fortaleza voadora octaédrica.', imageName: 'Ramiel.webp' },
         { id: 6, type: 'anjo', name: 'Zeruel', designation: '14º Anjo', description: 'Entidade de combate devastador.', imageName: 'zeruel.webp' }
       ]
     };
@@ -98,13 +96,8 @@ export default {
 .database-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
 .card-item { background-color: #0d0d0d; border: 1px solid #ff5500; padding: 20px; position: relative; color: #ff5500; }
 .card-badge { position: absolute; top: 10px; right: 10px; font-size: 11px; padding: 2px 6px; border: 1px solid currentColor; }
-.card-image-container { width: 100%; height: 220px; overflow: hidden; border: 1px solid #333; background-color: #000; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; }
-.card-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Mantém o preenchimento total sem bordas pretas */
-  object-position: center 20%; /* Ajusta o foco ligeiramente para cima */
-}
+.card-image-container { width: 100%; height: 220px; background-color: #000; display: flex; align-items: center; justify-content: center; border: 1px solid #333; margin-bottom: 15px; overflow: hidden; }
+.card-image { width: 100%; height: 100%; object-fit: cover; }
 .card-item.eva { border-color: #bb66ff; color: #bb66ff; }
 .card-item.anjo { border-color: #ff3333; color: #ff3333; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
