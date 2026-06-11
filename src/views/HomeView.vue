@@ -20,7 +20,7 @@
         
         <div class="filter-buttons">
           <button @click="filterType = 'todos'" :class="{ active: filterType === 'todos' }">TODOS</button>
-          <button @click="filterType = 'eva'" :class="{ active: filterType === 'eva' }">EVANGELIONS</button>
+          <button @click="filterType = 'eva'" :class="{ active: filterType === 'eva' }">EVAs</button>
           <button @click="filterType = 'anjo'" :class="{ active: filterType === 'anjo' }">ANJOS</button>
         </div>
       </section>
