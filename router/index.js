@@ -1,14 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
-import LoginView from '../views/LoginView.vue';
-import RegisterItemView from '../views/RegisterItemView.vue';
+// Ajustado o caminho para entrar na pasta 'src/views'
+import HomeView from '../src/views/HomeView.vue';
+import LoginView from '../src/views/LoginView.vue';
+import RegisterItemView from '../src/views/RegisterItemView.vue';
 
 const routes = [
   {
     path: '/',
     name: 'home',
     component: HomeView,
-    meta: { requiresAuth: true } // Indica que esta rota é protegida
+    meta: { requiresAuth: true }
   },
   {
     path: '/login',
@@ -27,15 +28,13 @@ const router = createRouter({
   routes
 });
 
-// Trava de segurança do MAGI - Executada antes de entrar em qualquer página
+// Trava de segurança do MAGI
 router.beforeEach((to, from, next) => {
   const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
 
   if (to.meta.requiresAuth && !isAuthenticated) {
-    // Se a rota exige login e o usuário não está autenticado, manda pro Login
     next('/login');
   } else {
-    // Caso contrário, permite a passagem
     next();
   }
 });
