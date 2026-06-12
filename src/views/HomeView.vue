@@ -74,8 +74,21 @@ export default {
 </script>
 
 <style scoped>
+/* O container principal que recebe a imagem de fundo */
+.home-wrapper {
+  min-height: 100vh;
+  background-image: url('/SystemOnline.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #000;
+}
+
+/* Container de conteúdo com fundo escurecido para contraste */
 .home-container {
   padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  min-height: 100vh;
 }
 
 .system-header {
@@ -180,14 +193,7 @@ export default {
 }
 
 @keyframes blink {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.4;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
 }
 </style>

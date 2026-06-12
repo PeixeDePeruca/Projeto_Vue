@@ -24,14 +24,18 @@ export default {
 </script>
 
 <style>
+
 #nerv-system {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
+
 .main-content {
   flex: 1;
-  padding: 20px;
+  
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 </style>

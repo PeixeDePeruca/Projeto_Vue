@@ -74,7 +74,7 @@ export default {
   z-index: 10;
   box-sizing: border-box;
   
-  /* Ajustado de 50px para 40px para subir a caixa em 2% */
+
   margin-top: 40px; 
 }
 
@@ -82,7 +82,7 @@ h2 {
   color: #ff0000;
   text-align: center;
   margin-bottom: 20px;
-  /* Aumentado 2% sobre os 16.8px */
+
   font-size: 17.14px; 
   letter-spacing: 1px;
   font-weight: bold;
@@ -97,7 +97,7 @@ h2 {
 
 .input-group label {
   color: #ff0000;
-  /* Aumentado 2% sobre os 11.5px */
+
   font-size: 11.73px; 
   font-weight: bold;
   text-transform: uppercase;
