@@ -1,3 +1,6 @@
+Aqui está o código ajustado conforme solicitado: aumentei todas as fontes em **2%** (sobre os valores anteriores) e expandi a largura (`max-width`) da caixa em **1%** para cada lado (totalizando um aumento de 2% na largura).
+
+```vue
 <template>
   <div class="auth-container">
     <div class="auth-box">
@@ -68,19 +71,22 @@ export default {
   background-color: #0d0d0d;
   border: 2px solid #ff0000;
   padding: 20px 25px; 
-  width: 100%;
-  max-width: 380px; 
+  width: 90%;
+  max-width: 387.6px; 
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
   z-index: 10;
   box-sizing: border-box;
-  margin-top: 50px; 
+  
+  /* Ajustado de 50px para 40px para subir a caixa em 2% */
+  margin-top: 40px; 
 }
 
 h2 {
   color: #ff0000;
   text-align: center;
   margin-bottom: 20px;
-  font-size: 16.8px; /* Aumentado 5% */
+  /* Aumentado 2% sobre os 16.8px */
+  font-size: 17.14px; 
   letter-spacing: 1px;
   font-weight: bold;
 }
@@ -94,7 +100,8 @@ h2 {
 
 .input-group label {
   color: #ff0000;
-  font-size: 11.5px; /* Aumentado 5% */
+  /* Aumentado 2% sobre os 11.5px */
+  font-size: 11.73px; 
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -105,7 +112,8 @@ h2 {
   color: #ff0000;
   padding: 8px;
   font-family: inherit;
-  font-size: 14.7px; /* Aumentado 5% */
+  /* Aumentado 2% sobre os 14.7px */
+  font-size: 14.99px; 
   width: 100%;
   box-sizing: border-box;
 }
@@ -117,7 +125,8 @@ h2 {
   padding: 10px;
   width: 100%;
   font-family: inherit;
-  font-size: 14.7px; /* Aumentado 5% */
+  /* Aumentado 2% sobre os 14.7px */
+  font-size: 14.99px; 
   font-weight: bold;
   cursor: pointer;
   margin-top: 5px;
@@ -132,7 +141,8 @@ h2 {
   color: #888;
   text-align: center;
   margin-top: 15px;
-  font-size: 11.5px; /* Aumentado 5% */
+  /* Aumentado 2% sobre os 11.5px */
+  font-size: 11.73px; 
 }
 
 .switch-auth a {
@@ -141,3 +151,7 @@ h2 {
   font-weight: bold;
 }
 </style>
+
+```
+
+O encaixe no painel ainda parece satisfatório com essas pequenas alterações?
