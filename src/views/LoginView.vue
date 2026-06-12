@@ -33,7 +33,7 @@ export default {
     handleLogin() {
       const users = JSON.parse(localStorage.getItem('users') || '[]');
       const user = users.find(u => u.username === this.username && u.password === this.password);
-      
+
       if (user) {
         localStorage.setItem('isAuthenticated', 'true');
         localStorage.setItem('currentUser', this.username);
@@ -47,123 +47,97 @@ export default {
 </script>
 
 <style scoped>
-.auth-container { 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  min-height: 85vh; 
-  padding: 20px;
-  box-sizing: border-box;
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url('/MagiSystem.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000;
 }
 
-/* Reduzido sutilmente para 610px e ajustado o respiro interno */
-.auth-box { 
-  background-color: #0d0d0d; 
-  border: 2px solid #ff0000; 
-  padding: 45px 38px; 
-  width: 100%; 
-  max-width: 610px; 
-  box-shadow: 0 0 25px rgba(255, 0, 0, 0.2); 
+.auth-box {
+  background-color: #0d0d0d;
+  border: 2px solid #ff0000;
+  padding: 20px 25px; 
+  width: 100%;
+  max-width: 380px; 
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+  z-index: 10;
   box-sizing: border-box;
+  margin-top: 50px; 
 }
 
-h2 { 
-  color: #ff0000; 
-  text-align: center; 
-  margin-bottom: 38px; 
-  font-size: 24px; /* Ajuste sutil no tamanho do título */
-  letter-spacing: 2px; 
+h2 {
+  color: #ff0000;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 16.8px; /* Aumentado 5% */
+  letter-spacing: 1px;
   font-weight: bold;
 }
 
-.input-group { 
-  display: flex; 
-  flex-direction: column; 
-  gap: 10px; 
-  margin-bottom: 30px; 
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 15px;
 }
 
-.input-group label { 
-  color: #ff0000; 
-  font-size: 15px; /* Fonte ajustada */
-  font-weight: bold; 
+.input-group label {
+  color: #ff0000;
+  font-size: 11.5px; /* Aumentado 5% */
+  font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
-/* Inputs ligeiramente mais baixos e elegantes */
-.input-group input { 
-  background-color: #000; 
-  border: 1px solid #ff0000; 
-  color: #ff0000; 
-  padding: 15px; 
-  font-family: inherit; 
-  font-size: 17px; 
-  box-sizing: border-box;
+.input-group input {
+  background-color: #000;
+  border: 1px solid #ff0000;
+  color: #ff0000;
+  padding: 8px;
+  font-family: inherit;
+  font-size: 14.7px; /* Aumentado 5% */
   width: 100%;
+  box-sizing: border-box;
 }
 
-.input-group input::placeholder {
-  color: #550000;
+.auth-btn {
+  background-color: #ff0000;
+  color: #000;
+  border: 1px solid #ff0000;
+  padding: 10px;
+  width: 100%;
+  font-family: inherit;
+  font-size: 14.7px; /* Aumentado 5% */
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 5px;
 }
 
-/* Botão balanceado proporcionalmente */
-.auth-btn { 
-  background-color: #ff0000; 
-  color: #000; 
-  border: 2px solid #ff0000; 
-  padding: 15px; 
-  width: 100%; 
-  font-family: inherit; 
-  font-size: 17px; 
-  font-weight: bold; 
-  cursor: pointer; 
-  margin-top: 10px; 
-  transition: all 0.3s ease; 
-  letter-spacing: 1px;
+.auth-btn:hover {
+  background-color: #000;
+  color: #ff0000;
 }
 
-.auth-btn:hover { 
-  background-color: #000; 
-  color: #ff0000; 
+.switch-auth {
+  color: #888;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 11.5px; /* Aumentado 5% */
 }
 
-.switch-auth { 
-  color: #888; 
-  text-align: center; 
-  margin-top: 30px; 
-  font-size: 15px; 
-}
-
-.switch-auth a { 
-  color: #ff0000; 
-  text-decoration: none; 
-  font-weight: bold; 
-}
-
-/* 📱 Mantém a responsividade impecável no inspetor do professor */
-@media (max-width: 768px) {
-  .auth-box {
-    padding: 35px 20px;
-    max-width: 100%;
-  }
-
-  h2 {
-    font-size: 20px;
-    margin-bottom: 25px;
-  }
-
-  .input-group {
-    margin-bottom: 20px;
-  }
-
-  .input-group input, .auth-btn {
-    padding: 12px;
-    font-size: 15px;
-  }
-
-  .switch-auth {
-    font-size: 13px;
-  }
+.switch-auth a {
+  color: #ff0000;
+  text-decoration: none;
+  font-weight: bold;
 }
 </style>
