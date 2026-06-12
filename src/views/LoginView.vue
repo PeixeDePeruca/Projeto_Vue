@@ -1,6 +1,3 @@
-Aqui está o código ajustado conforme solicitado: aumentei todas as fontes em **2%** (sobre os valores anteriores) e expandi a largura (`max-width`) da caixa em **1%** para cada lado (totalizando um aumento de 2% na largura).
-
-```vue
 <template>
   <div class="auth-container">
     <div class="auth-box">
@@ -17,7 +14,7 @@ Aqui está o código ajustado conforme solicitado: aumentei todas as fontes em *
         <button type="submit" class="auth-btn">CONECTAR AO TERMINAL</button>
       </form>
       <p class="switch-auth">
-        Novo na NÉRV? <router-link to="/register">Solicitar Registro</router-link>
+        Novo na NERV? <router-link to="/register">Solicitar Registro</router-link>
       </p>
     </div>
   </div>
@@ -151,7 +148,3 @@ h2 {
   font-weight: bold;
 }
 </style>
-
-```
-
-O encaixe no painel ainda parece satisfatório com essas pequenas alterações?
