@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
-// Ajustado o caminho para entrar na pasta 'src/views'
+
+
 import HomeView from '../src/views/HomeView.vue';
 import LoginView from '../src/views/LoginView.vue';
 import RegisterItemView from '../src/views/RegisterItemView.vue';

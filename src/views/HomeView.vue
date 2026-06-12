@@ -4,18 +4,13 @@
 
     <div v-else class="home-container">
       <header class="system-header">
-        <h1>SISTEMA TÁTICO MAGI // INICIALIZADO</h1>
+        <h1>NERV // SISTEMA MAGI</h1>
         <p class="status-alert">STATUS: OPERACIONAL (MÍDIAS LOCAIS)</p>
       </header>
 
       <section class="control-panel">
-        <input 
-          v-model="searchQuery" 
-          type="text" 
-          placeholder="Buscar codinome do EVA ou Anjo..." 
-          class="search-input"
-        />
-        
+        <input v-model="searchQuery" type="text" placeholder="Buscar codinome do EVA ou Anjo..." class="search-input" />
+
         <div class="filter-buttons">
           <button @click="filterType = 'todos'" :class="{ active: filterType === 'todos' }">TODOS</button>
           <button @click="filterType = 'eva'" :class="{ active: filterType === 'eva' }">EVAs</button>
@@ -26,7 +21,7 @@
       <section class="database-grid">
         <div v-for="item in filteredItems" :key="item.id" class="card-item" :class="item.type">
           <div class="card-badge">{{ item.type.toUpperCase() }}</div>
-          
+
           <div class="card-image-container">
             <img :src="getImageUrl(item.imageName)" :alt="item.name" class="card-image" />
           </div>
@@ -65,7 +60,7 @@ export default {
     filteredItems() {
       return this.database.filter(item => {
         const matchesSearch = item.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-                              item.description.toLowerCase().includes(this.searchQuery.toLowerCase());
+          item.description.toLowerCase().includes(this.searchQuery.toLowerCase());
         const matchesFilter = this.filterType === 'todos' || item.type === this.filterType;
         return matchesSearch && matchesFilter;
       });
@@ -79,26 +74,120 @@ export default {
 </script>
 
 <style scoped>
-.home-container { padding: 20px; }
-.system-header { text-align: center; margin-bottom: 30px; color: #ff5500; }
-.status-alert { color: #00ff00; font-weight: bold; animation: blink 1.5s infinite; }
-.control-panel { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; background-color: #111; padding: 20px; border: 1px solid #ff5500; }
-.search-input { background-color: #000; border: 1px solid #ff5500; color: #ff5500; padding: 12px; width: 100%; font-family: monospace; }
-.filter-buttons { display: flex; gap: 10px; }
-.filter-buttons button { background-color: #000; border: 1px solid #ff5500; color: #ff5500; padding: 8px 15px; cursor: pointer; font-weight: bold; }
-.filter-buttons button.active { background-color: #ff5500; color: #000; }
-.database-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-.card-item { background-color: #0d0d0d; border: 1px solid #ff5500; padding: 20px; position: relative; color: #ff5500; }
-.card-badge { position: absolute; top: 10px; right: 10px; font-size: 11px; padding: 2px 6px; border: 1px solid currentColor; }
-
-.card-image-container { 
-  width: 100%; height: 220px; background-color: #000; 
-  display: flex; align-items: center; justify-content: center; 
-  border: 1px solid #333; margin-bottom: 15px; overflow: hidden; 
+.home-container {
+  padding: 20px;
 }
-.card-image { width: 100%; height: 100%; object-fit: cover; }
 
-.card-item.eva { border-color: #bb66ff; color: #bb66ff; }
-.card-item.anjo { border-color: #ff3333; color: #ff3333; }
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.system-header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ff5500;
+}
+
+.status-alert {
+  color: #00ff00;
+  font-weight: bold;
+  animation: blink 1.5s infinite;
+}
+
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+  background-color: #111;
+  padding: 20px;
+  border: 1px solid #ff5500;
+}
+
+.search-input {
+  background-color: #000;
+  border: 1px solid #ff5500;
+  color: #ff5500;
+  padding: 12px;
+  width: 100%;
+  font-family: monospace;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-buttons button {
+  background-color: #000;
+  border: 1px solid #ff5500;
+  color: #ff5500;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.filter-buttons button.active {
+  background-color: #ff5500;
+  color: #000;
+}
+
+.database-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card-item {
+  background-color: #0d0d0d;
+  border: 1px solid #ff5500;
+  padding: 20px;
+  position: relative;
+  color: #ff5500;
+}
+
+.card-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 11px;
+  padding: 2px 6px;
+  border: 1px solid currentColor;
+}
+
+.card-image-container {
+  width: 100%;
+  height: 220px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #333;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-item.eva {
+  border-color: #bb66ff;
+  color: #bb66ff;
+}
+
+.card-item.anjo {
+  border-color: #ff3333;
+  color: #ff3333;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
 </style>
