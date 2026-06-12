@@ -31,6 +31,12 @@
           <p>{{ item.description }}</p>
         </div>
       </section>
+
+      <div class="system-warning-box">
+        <p class="warning-main">Banco de Dados incompleto...</p>
+        <p class="warning-sub">Verifique o seu nível de permissão com o seu encarregado</p>
+      </div>
+
     </div>
   </div>
 </template>
@@ -74,7 +80,7 @@ export default {
 </script>
 
 <style scoped>
-/* O container principal que recebe a imagem de fundo */
+/*container principal que recebe a imagem de fundo */
 .home-wrapper {
   min-height: 100vh;
   background-image: url('/SystemOnline.webp');
@@ -84,7 +90,7 @@ export default {
   background-color: #000;
 }
 
-/* Container de conteúdo com fundo escurecido para contraste */
+/*container de conteúdo com fundo escurecido para contraste*/
 .home-container {
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.7);
@@ -145,6 +151,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
+  margin-bottom: 40px; /*Adicionado um espaço abaixo do grid */
 }
 
 .card-item {
@@ -190,6 +197,33 @@ export default {
 .card-item.anjo {
   border-color: #ff3333;
   color: #ff3333;
+}
+
+/*ESTILIZAÇÃO DO ALERTA DE PERMISSÃO EBAAAAA*/
+.system-warning-box {
+  text-align: center;
+  margin: 40px auto 20px auto;
+  padding: 15px;
+  max-width: 600px;
+  font-family: monospace;
+  border: 1px dashed #ff3333;
+  background-color: rgba(255, 51, 51, 0.05);
+}
+
+.warning-main {
+  color: #ff3333;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: blink 2s infinite;
+}
+
+.warning-sub {
+  color: #a0a0a0;
+  font-size: 1rem;
+  margin: 0;
 }
 
 @keyframes blink {
