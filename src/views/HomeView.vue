@@ -45,9 +45,7 @@ import NervSplash from '../components/NervSplash.vue';
 
 export default {
   name: 'HomeView',
-  components: {
-    NervSplash
-  },
+  components: { NervSplash },
   data() {
     return {
       isLoading: true,
@@ -55,7 +53,7 @@ export default {
       filterType: 'todos',
       database: [
         { id: 1, type: 'eva', name: 'EVA-01', designation: 'Protótipo de Testes', description: 'Unidade pilotada por Shinji Ikari.', imageName: 'Eva01.webp' },
-        { id: 2, type: 'eva', name: 'EVA-00', designation: 'Protótipo Inicial', description: 'Primeira unidade funcional.', imageName: 'Eva00_both_versions(2).png' },
+        { id: 2, type: 'eva', name: 'EVA-00', designation: 'Protótipo Inicial', description: 'Primeira unidade funcional.', imageName: 'Eva00_old_new.png' },
         { id: 3, type: 'eva', name: 'EVA-02', designation: 'Unidade de Produção', description: 'Construído na Alemanha.', imageName: 'eva02.webp' },
         { id: 4, type: 'anjo', name: 'Sachiel', designation: '3º Anjo', description: 'Primeiro Anjo a atacar Neo Tokyo-3.', imageName: 'sachiel.webp' },
         { id: 5, type: 'anjo', name: 'Ramiel', designation: '5º Anjo', description: 'Fortaleza voadora octaédrica.', imageName: 'Ramiel.webp' },
@@ -74,12 +72,8 @@ export default {
     }
   },
   methods: {
-    onSplashFinished() {
-      this.isLoading = false;
-    },
-    getImageUrl(name) {
-      return new URL(`../assets/${name}`, import.meta.url).href;
-    }
+    onSplashFinished() { this.isLoading = false; },
+    getImageUrl(name) { return new URL(`../assets/${name}`, import.meta.url).href; }
   }
 };
 </script>
@@ -96,8 +90,14 @@ export default {
 .database-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
 .card-item { background-color: #0d0d0d; border: 1px solid #ff5500; padding: 20px; position: relative; color: #ff5500; }
 .card-badge { position: absolute; top: 10px; right: 10px; font-size: 11px; padding: 2px 6px; border: 1px solid currentColor; }
-.card-image-container { width: 100%; height: 220px; background-color: #000; display: flex; align-items: center; justify-content: center; border: 1px solid #333; margin-bottom: 15px; overflow: hidden; }
+
+.card-image-container { 
+  width: 100%; height: 220px; background-color: #000; 
+  display: flex; align-items: center; justify-content: center; 
+  border: 1px solid #333; margin-bottom: 15px; overflow: hidden; 
+}
 .card-image { width: 100%; height: 100%; object-fit: cover; }
+
 .card-item.eva { border-color: #bb66ff; color: #bb66ff; }
 .card-item.anjo { border-color: #ff3333; color: #ff3333; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
