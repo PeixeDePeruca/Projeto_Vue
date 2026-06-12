@@ -61,7 +61,7 @@
   padding: 25px;
   max-width: 700px;
   width: 100%;
-  /* Fundo escuro com leve transparência para ver a imagem atrás */
+  /*fuundo escuro com leve transparência para ver a imagem do background*/
   background: rgba(13, 13, 13, 0.9);
   color: #ff0000;
   font-size: 0.9rem;
@@ -79,6 +79,7 @@ h1 {
   line-height: 1.4;
 }
 
+/* ESTILIZAÇÃO DO BOTÃO VOLTAR */
 .back-btn { 
   display: inline-block;
   margin-top: 20px;
@@ -87,5 +88,22 @@ h1 {
   padding: 8px 15px;
   text-decoration: none;
   font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/*EFEITO GLOW NO HOVER */
+.back-btn:hover {
+  color: #00ff00;            /*altera o texto para Verde Terminal */
+  border-color: #00ff00;     /*altera a borda para Verde */
+  background-color: rgba(0, 255, 0, 0.05); /*ffuundo sutilmente esverdeado */
+  
+  /* Efeito de Brilho Expansivo (Glow) */
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5),
+              0 0 25px rgba(0, 255, 0, 0.2),
+              inset 0 0 10px rgba(0, 255, 0, 0.15);
+              
+  transform: scale(1.02);    /* Leve pulsação ao focar */
 }
 </style>
