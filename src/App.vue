@@ -1,10 +1,12 @@
 <template>
   <div id="nerv-system">
-    <Navbar />
+    <Navbar v-if="$route.path !== '/login'" />
+    
     <main class="main-content">
       <router-view />
     </main>
-    <Footer />
+    
+    <Footer v-if="$route.path !== '/login'" />
   </div>
 </template>
 
