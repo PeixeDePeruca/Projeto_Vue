@@ -19,7 +19,13 @@
       </section>
 
       <section class="database-grid">
-        <div v-for="item in filteredItems" :key="item.id" class="card-item" :class="item.type">
+        <router-link 
+          v-for="item in filteredItems" 
+          :key="item.id" 
+          :to="'/details/' + item.id"
+          class="card-item" 
+          :class="item.class" 
+        >
           <div class="card-badge">{{ item.type.toUpperCase() }}</div>
 
           <div class="card-image-container">
@@ -28,15 +34,16 @@
 
           <h3>{{ item.name }}</h3>
           <p><strong>Designação:</strong> {{ item.designation }}</p>
-          <p>{{ item.description }}</p>
-        </div>
+          <p class="description-text">{{ item.description }}</p>
+          
+          <div class="click-footer">CLIQUE PARA ACESSAR ARQUIVOS ></div>
+        </router-link>
       </section>
 
       <div class="system-warning-box">
         <p class="warning-main">Banco de Dados incompleto...</p>
         <p class="warning-sub">Verifique o seu nível de permissão com o seu encarregado</p>
       </div>
-
     </div>
   </div>
 </template>
@@ -53,12 +60,19 @@ export default {
       searchQuery: '',
       filterType: 'todos',
       database: [
-        { id: 1, type: 'eva', name: 'EVA-01', designation: 'Protótipo de Testes', description: 'Unidade pilotada por Shinji Ikari.', imageName: 'Eva01.webp' },
-        { id: 2, type: 'eva', name: 'EVA-00', designation: 'Protótipo Inicial', description: 'Primeira unidade funcional.', imageName: 'Eva00_old_new.png' },
-        { id: 3, type: 'eva', name: 'EVA-02', designation: 'Unidade de Produção', description: 'Construído na Alemanha.', imageName: 'eva02.webp' },
-        { id: 4, type: 'anjo', name: 'Sachiel', designation: '3º Anjo', description: 'Primeiro Anjo a atacar Neo Tokyo-3.', imageName: 'sachiel.webp' },
-        { id: 5, type: 'anjo', name: 'Ramiel', designation: '5º Anjo', description: 'Fortaleza voadora octaédrica.', imageName: 'Ramiel.webp' },
-        { id: 6, type: 'anjo', name: 'Zeruel', designation: '14º Anjo', description: 'Entidade de combate devastador.', imageName: 'zeruel.webp' }
+        // EVAs
+        { id: 1, type: 'eva', class: 'eva-01', name: 'EVA-01', designation: 'Protótipo de Testes', description: 'Unidade pilotada por Shinji Ikari.', imageName: 'Eva01.webp' },
+        { id: 2, type: 'eva', class: 'eva-00', name: 'EVA-00', designation: 'Protótipo Inicial', description: 'Primeira unidade funcional.', imageName: 'Eva00_old_new.png' },
+        { id: 3, type: 'eva', class: 'eva-02', name: 'EVA-02', designation: 'Unidade de Produção', description: 'Construído na Alemanha.', imageName: 'eva02.webp' },
+        { id: 7, type: 'eva', class: 'eva-08', name: 'EVA-08', designation: 'Unidade Provisória', description: 'Especialista em suporte de longa distância.', imageName: 'eva08.webp' },
+        { id: 8, type: 'eva', class: 'mark-06', name: 'Mark.06', designation: 'Unidade Autônoma', description: 'Construído na base lunar Tabgha.', imageName: 'mark06.webp' },
+        
+        // ANJOS
+        { id: 4, type: 'anjo', class: 'anjo-white', name: 'Sachiel', designation: '3º Anjo', description: 'Primeiro Anjo a atacar Neo Tokyo-3.', imageName: 'sachiel.webp' },
+        { id: 5, type: 'anjo', class: 'anjo-white', name: 'Ramiel', designation: '5º Anjo', description: 'Fortaleza voadora octaédrica.', imageName: 'Ramiel.webp' },
+        { id: 6, type: 'anjo', class: 'anjo-white', name: 'Zeruel', designation: '14º Anjo', description: 'Entidade de combate devastador.', imageName: 'zeruel.webp' },
+        { id: 9, type: 'anjo', class: 'anjo-white', name: 'Shamshel', designation: '4º Anjo', description: 'Entidade em forma de inseto com chicotes de luz.', imageName: 'shamshel.webp' },
+        { id: 10, type: 'anjo', class: 'anjo-white', name: 'Gaghiel', designation: '6º Anjo', description: 'Entidade aquática massiva.', imageName: 'gaghiel.webp' }
       ]
     };
   },
@@ -80,7 +94,7 @@ export default {
 </script>
 
 <style scoped>
-/*container principal que recebe a imagem de fundo */
+/* REGRAS GERAIS */
 .home-wrapper {
   min-height: 100vh;
   background-image: url('/SystemOnline.webp');
@@ -90,68 +104,37 @@ export default {
   background-color: #000;
 }
 
-/*container de conteúdo com fundo escurecido para contraste*/
 .home-container {
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.7);
   min-height: 100vh;
 }
 
-.system-header {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #ff5500;
-}
-
-.status-alert {
-  color: #00ff00;
-  font-weight: bold;
-  animation: blink 1.5s infinite;
-}
-
-.control-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 30px;
-  background-color: #111;
-  padding: 20px;
-  border: 1px solid #ff5500;
-}
-
-.search-input {
+/* BOTÕES COM EFEITO GLOW (Global do componente) */
+button, .btn-magi {
   background-color: #000;
   border: 1px solid #ff5500;
   color: #ff5500;
-  padding: 12px;
-  width: 100%;
-  font-family: monospace;
-}
-
-.filter-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.filter-buttons button {
-  background-color: #000;
-  border: 1px solid #ff5500;
-  color: #ff5500;
-  padding: 8px 15px;
+  padding: 10px 20px;
   cursor: pointer;
   font-weight: bold;
+  font-family: monospace;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
 }
 
-.filter-buttons button.active {
+button:hover {
   background-color: #ff5500;
   color: #000;
+  box-shadow: 0 0 15px #ff5500; /* Efeito Glow */
 }
 
+/* CARDS E ANIMAÇÕES */
 .database-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-  margin-bottom: 40px; /*Adicionado um espaço abaixo do grid */
+  gap: 30px;
+  margin-bottom: 40px;
 }
 
 .card-item {
@@ -159,16 +142,15 @@ export default {
   border: 1px solid #ff5500;
   padding: 20px;
   position: relative;
-  color: #ff5500;
+  text-decoration: none; /* Remove underline do router-link */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.card-badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 11px;
-  padding: 2px 6px;
-  border: 1px solid currentColor;
+/* Efeito de luz e sombra no Hover do card */
+.card-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 30px var(--card-color); /* Sombra colorida baseada na classe */
+  z-index: 10;
 }
 
 .card-image-container {
@@ -189,45 +171,59 @@ export default {
   object-fit: cover;
 }
 
-.card-item.eva {
-  border-color: #bb66ff;
-  color: #bb66ff;
-}
-
-.card-item.anjo {
-  border-color: #ff3333;
-  color: #ff3333;
-}
-
-/*ESTILIZAÇÃO DO ALERTA DE PERMISSÃO EBAAAAA*/
-.system-warning-box {
-  text-align: center;
-  margin: 40px auto 20px auto;
-  padding: 15px;
-  max-width: 600px;
+.click-footer {
+  margin-top: 15px;
+  font-size: 10px;
+  text-align: right;
+  opacity: 0.6;
   font-family: monospace;
-  border: 1px dashed #ff3333;
-  background-color: rgba(255, 51, 51, 0.05);
 }
 
-.warning-main {
-  color: #ff3333;
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  animation: blink 2s infinite;
+/* 1º OBJETIVO: CORES ESPECÍFICAS */
+.eva-01 { --card-color: #bb66ff; color: var(--card-color); border-color: var(--card-color); }
+.eva-00 { --card-color: #0088ff; color: var(--card-color); border-color: var(--card-color); }
+.eva-02 { --card-color: #ff3333; color: var(--card-color); border-color: var(--card-color); }
+.eva-08 { --card-color: #ff88cc; color: var(--card-color); border-color: var(--card-color); }
+.mark-06 { --card-color: #3333ff; color: var(--card-color); border-color: var(--card-color); }
+.anjo-white { --card-color: #ffffff; color: var(--card-color); border-color: var(--card-color); }
+
+/* Ajuste das badges para não sumirem no branco */
+.card-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 11px;
+  padding: 2px 6px;
+  border: 1px solid currentColor;
+  background: rgba(0,0,0,0.8);
 }
 
-.warning-sub {
+.description-text {
   color: #a0a0a0;
-  font-size: 1rem;
-  margin: 0;
+  font-size: 0.9em;
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+/* Restante do CSS (Avisos/Header) */
+.system-header { text-align: center; margin-bottom: 30px; color: #ff5500; }
+.status-alert { color: #00ff00; font-weight: bold; animation: blink 1.5s infinite; }
+.control-panel { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; background-color: #111; padding: 20px; border: 1px solid #ff5500; }
+.search-input { background-color: #000; border: 1px solid #ff5500; color: #ff5500; padding: 12px; width: 100%; font-family: monospace; }
+
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.system-warning-box { text-align: center; margin: 40px auto; padding: 15px; max-width: 600px; font-family: monospace; border: 1px dashed #ff3333; background: rgba(255,51,51,0.05); }
+
+/* TAMANHOS DE FONTES FIXOS EM PIXELS */
+.warning-main { 
+  color: #ff3333; 
+  font-weight: bold; 
+  font-size: 18px; 
+  margin-bottom: 6px;
+  animation: blink 2s infinite; 
+}
+.warning-sub { 
+  color: #a0a0a0; 
+  font-size: 16px; 
+  margin: 0;
 }
 </style>
