@@ -64,8 +64,8 @@ export default {
         { id: 1, type: 'eva', class: 'eva-01', name: 'EVA-01', designation: 'Protótipo de Testes', description: 'Unidade pilotada por Shinji Ikari.', imageName: 'Eva01.webp' },
         { id: 2, type: 'eva', class: 'eva-00', name: 'EVA-00', designation: 'Protótipo Inicial', description: 'Primeira unidade funcional.', imageName: 'Eva00_old_new.png' },
         { id: 3, type: 'eva', class: 'eva-02', name: 'EVA-02', designation: 'Unidade de Produção', description: 'Construído na Alemanha.', imageName: 'eva02.webp' },
-        { id: 7, type: 'eva', class: 'eva-08', name: 'EVA-08', designation: 'Unidade Provisória', description: 'Especialista em suporte de longa distância.', imageName: 'eva08.webp' },
-        { id: 8, type: 'eva', class: 'mark-06', name: 'Mark.06', designation: 'Unidade Autônoma', description: 'Construído na base lunar Tabgha.', imageName: 'mark06.webp' },
+        { id: 7, type: 'eva', class: 'eva-08', name: 'EVA-08', designation: 'Unidade Provisória', description: 'Especialista em suporte de longa distância.', imageName: 'Eva_08.webp' },
+        { id: 8, type: 'eva', class: 'mark-06', name: 'Mark.06', designation: 'Unidade Autônoma', description: 'Construído na base lunar Tabgha.', imageName: 'mark06.png' },
         
         // ANJOS
         { id: 4, type: 'anjo', class: 'anjo-white', name: 'Sachiel', designation: '3º Anjo', description: 'Primeiro Anjo a atacar Neo Tokyo-3.', imageName: 'sachiel.webp' },
@@ -184,7 +184,7 @@ button:hover {
 .eva-00 { --card-color: #0088ff; color: var(--card-color); border-color: var(--card-color); }
 .eva-02 { --card-color: #ff3333; color: var(--card-color); border-color: var(--card-color); }
 .eva-08 { --card-color: #ff88cc; color: var(--card-color); border-color: var(--card-color); }
-.mark-06 { --card-color: #3333ff; color: var(--card-color); border-color: var(--card-color); }
+.mark-06 { --card-color: #174a76; color: var(--card-color); border-color: var(--card-color); }
 .anjo-white { --card-color: #ffffff; color: var(--card-color); border-color: var(--card-color); }
 
 /* Ajuste das badges para não sumirem no branco */
