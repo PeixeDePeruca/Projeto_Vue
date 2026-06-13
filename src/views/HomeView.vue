@@ -68,6 +68,8 @@ export default {
         { id: 8, type: 'eva', class: 'mark-06', name: 'Mark.06', designation: 'Unidade Autônoma', description: 'Construído na base lunar Tabgha.', imageName: 'mark06.png' },
         
         // ANJOS
+        { id: 11, type: 'anjo', class: 'anjo-white', name: 'Adão', designation: '1º Anjo', description: 'A primeira Semente da Vida trazida à Terra. Origem de todos os Anjos.', imageName: 'Adam_Giant_of_Light.webp' },
+        { id: 12, type: 'anjo', class: 'anjo-white', name: 'Lilith', designation: '2º Anjo', description: 'A segunda Semente da Vida. Fonte do LCL e criadora da humanidade.', imageName: 'Lilith.webp' },
         { id: 4, type: 'anjo', class: 'anjo-white', name: 'Sachiel', designation: '3º Anjo', description: 'Primeiro Anjo a atacar Neo Tokyo-3.', imageName: 'sachiel.webp' },
         { id: 5, type: 'anjo', class: 'anjo-white', name: 'Ramiel', designation: '5º Anjo', description: 'Fortaleza voadora octaédrica.', imageName: 'Ramiel.webp' },
         { id: 6, type: 'anjo', class: 'anjo-white', name: 'Zeruel', designation: '14º Anjo', description: 'Entidade de combate devastador.', imageName: 'zeruel.webp' },
