@@ -67,14 +67,14 @@ export default {
         { id: 7, type: 'eva', class: 'eva-08', name: 'EVA-08', designation: 'Unidade Provisória', description: 'Especialista em suporte de longa distância.', imageName: 'Eva_08.webp' },
         { id: 8, type: 'eva', class: 'mark-06', name: 'Mark.06', designation: 'Unidade Autônoma', description: 'Construído na base lunar Tabgha.', imageName: 'mark06.png' },
         
-        // ANJOS
+        // ANJOS (Reordenados: 1º, 2º, 3º, 4º, 5º, 6º, 14º)
         { id: 11, type: 'anjo', class: 'anjo-white', name: 'Adão', designation: '1º Anjo', description: 'A primeira Semente da Vida trazida à Terra. Origem de todos os Anjos.', imageName: 'Adam_Giant_of_Light.webp' },
         { id: 12, type: 'anjo', class: 'anjo-white', name: 'Lilith', designation: '2º Anjo', description: 'A segunda Semente da Vida. Fonte do LCL e criadora da humanidade.', imageName: 'Lilith.webp' },
         { id: 4, type: 'anjo', class: 'anjo-white', name: 'Sachiel', designation: '3º Anjo', description: 'Primeiro Anjo a atacar Neo Tokyo-3.', imageName: 'sachiel.webp' },
-        { id: 5, type: 'anjo', class: 'anjo-white', name: 'Ramiel', designation: '5º Anjo', description: 'Fortaleza voadora octaédrica.', imageName: 'Ramiel.webp' },
-        { id: 6, type: 'anjo', class: 'anjo-white', name: 'Zeruel', designation: '14º Anjo', description: 'Entidade de combate devastador.', imageName: 'zeruel.webp' },
         { id: 9, type: 'anjo', class: 'anjo-white', name: 'Shamshel', designation: '4º Anjo', description: 'Entidade em forma de inseto com chicotes de luz.', imageName: 'Shamshel.webp' },
-        { id: 10, type: 'anjo', class: 'anjo-white', name: 'Gaghiel', designation: '6º Anjo', description: 'Entidade aquática massiva.', imageName: 'Gaghiel.webp' }
+        { id: 5, type: 'anjo', class: 'anjo-white', name: 'Ramiel', designation: '5º Anjo', description: 'Fortaleza voadora octaédrica.', imageName: 'Ramiel.webp' },
+        { id: 10, type: 'anjo', class: 'anjo-white', name: 'Gaghiel', designation: '6º Anjo', description: 'Entidade aquática massiva.', imageName: 'Gaghiel.webp' },
+        { id: 6, type: 'anjo', class: 'anjo-white', name: 'Zeruel', designation: '14º Anjo', description: 'Entidade de combate devastador.', imageName: 'zeruel.webp' }
       ]
     };
   },

@@ -3,6 +3,7 @@ import HomeView from '../src/views/HomeView.vue';
 import LoginView from '../src/views/LoginView.vue';
 import RegisterItemView from '../src/views/RegisterItemView.vue';
 import AboutView from '../src/views/AboutView.vue';
+import DetailsView from '../src/views/DetailsView.vue'; //IMPORTAÇÃO DA NOVA PÁGINA
 
 const routes = [
   { 
@@ -21,10 +22,15 @@ const routes = [
     name: 'register', 
     component: RegisterItemView 
   },
-{ 
+  { 
     path: '/about', 
     name: 'about', 
     component: AboutView 
+  },
+  {
+    path: '/details/:id', //ROTA DINÂMICA COMPATÍVEL COM OS CARDS(conversa do card com o index.js)
+    name: 'details',
+    component: DetailsView
   }
 ];
 
