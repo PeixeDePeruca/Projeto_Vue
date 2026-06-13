@@ -71,8 +71,8 @@ export default {
         { id: 4, type: 'anjo', class: 'anjo-white', name: 'Sachiel', designation: '3º Anjo', description: 'Primeiro Anjo a atacar Neo Tokyo-3.', imageName: 'sachiel.webp' },
         { id: 5, type: 'anjo', class: 'anjo-white', name: 'Ramiel', designation: '5º Anjo', description: 'Fortaleza voadora octaédrica.', imageName: 'Ramiel.webp' },
         { id: 6, type: 'anjo', class: 'anjo-white', name: 'Zeruel', designation: '14º Anjo', description: 'Entidade de combate devastador.', imageName: 'zeruel.webp' },
-        { id: 9, type: 'anjo', class: 'anjo-white', name: 'Shamshel', designation: '4º Anjo', description: 'Entidade em forma de inseto com chicotes de luz.', imageName: 'shamshel.webp' },
-        { id: 10, type: 'anjo', class: 'anjo-white', name: 'Gaghiel', designation: '6º Anjo', description: 'Entidade aquática massiva.', imageName: 'gaghiel.webp' }
+        { id: 9, type: 'anjo', class: 'anjo-white', name: 'Shamshel', designation: '4º Anjo', description: 'Entidade em forma de inseto com chicotes de luz.', imageName: 'Shamshel.webp' },
+        { id: 10, type: 'anjo', class: 'anjo-white', name: 'Gaghiel', designation: '6º Anjo', description: 'Entidade aquática massiva.', imageName: 'Gaghiel.webp' }
       ]
     };
   },
